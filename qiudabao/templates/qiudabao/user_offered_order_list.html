@@ -1,0 +1,12 @@
+<h2> orders i offered </h2>
+
+<a href="{% url 'qiudabao:offer_order' %}">Order</a>
+
+{% for order in orders %}
+<p>{{ order.dish }} {{ order.description }}</p>
+<form method="POST" action="{% url 'qiudabao:confirm_order' %}">
+  {% csrf_token %}
+  <input type="hidden" name="order_id" value="{{ order.id }}" />
+  <input type="submit" value="confirm order" />
+</form>
+{% endfor %}

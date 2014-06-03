@@ -1,0 +1,7 @@
+<h2>what i submitted</h2>
+
+<a href="{% url 'qiudabao:offer_order' %}">Order</a>
+
+{% for order in orders %}
+<p>{{ order.dish }} {{ order.description }}</p>
+{% endfor %}

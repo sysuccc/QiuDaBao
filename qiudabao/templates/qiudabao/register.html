@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+  <head>
+  </head>
+  <body>
+    <h2>User Register</h2>
+
+    <form method="POST" action="{% url 'qiudabao:register' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="login" />
+
+    </form>
+  </body>
+</html>
